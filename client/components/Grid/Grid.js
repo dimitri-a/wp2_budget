@@ -54,7 +54,7 @@ export default class Grid extends Component {
                   <Cell
                     text={field.name}
                     key={`th${index}`}
-                    className={field.className}
+                    className="App"
                   />
                 );
               })
