@@ -6,7 +6,7 @@ body {
   margin: 20px auto;
   max-width: 500px;
   width: calc(100% - 40px);
-  background: #f5f6f7;
+  background: green;
   padding: 20px;
   border-radius: 3px;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 .BackgroundImgExample {
-  width: 250px;
+  width: 100px;
   height: 141px;
   //background: url(../assets/img/book1.jpg) no-repeat;
   background-size: 100% auto;
