@@ -4,6 +4,8 @@ const path = require('path');
 const sourcePath = path.join(__dirname, './client');
 const staticsPath = path.join(__dirname, './static');
 
+const autoprefixer = require('autoprefixer');
+
 module.exports = function (env) {
     const nodeEnv = env && env.prod ? 'production' : 'development';
     const isProd = nodeEnv === 'production';
@@ -18,6 +20,19 @@ module.exports = function (env) {
             NODE_ENV: nodeEnv,
         }),
         new webpack.NamedModulesPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [
+                    autoprefixer({
+                        browsers: [
+                            'last 3 version',
+                            'ie >= 10',
+                        ],
+                    }),
+                ],
+                context: sourcePath,
+            },
+        })
     ];
 
     if (isProd) {
